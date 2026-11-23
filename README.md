@@ -16,10 +16,11 @@ The application features a simple terminal interface with ASCII art branding, an
   - Numbers (0–9)
   - Common punctuation marks and special characters.
 - **Case Insensitive:** Automatically converts input text to uppercase before translation.
+- **Word Separation:** Uses forward slashes (`/`) to distinguish between words in the translated output.
 - **Multiple Translations:** Allows users to translate multiple messages without restarting the application.
 - **Clear Screen:** Provides an option to clear the terminal screen.
 - **Cross-Platform Compatibility:** Supports Windows, macOS, and Linux terminal environments.
-- **ASCII Art Interface:** Displays a custom ASCII art logo when the application runs.
+- **ASCII Art Interface:** Displays custom ASCII art logos when the application runs.
 
 ## Project Structure
 
@@ -29,7 +30,8 @@ morse-code-translator/
 ├── art.py                # ASCII art logos
 ├── morse_code_dict.py    # Morse code character dictionary
 ├── script.py             # Main application
-└── README.md             # Project documentation
+├── README.md             # Project documentation
+└── .gitignore             # Files and directories ignored by Git
 ```
 
 ## Requirements
@@ -42,13 +44,13 @@ morse-code-translator/
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+   git clone https://github.com/hackerhegod/morse-code-translator.git
    ```
 
 2. Navigate into the project directory:
 
    ```bash
-   cd YOUR_REPOSITORY
+   cd morse-code-translator
    ```
 
 3. Run the application:
@@ -68,13 +70,15 @@ morse-code-translator/
 ### Example
 
 **Input:**
+
 ```text
 HELLO WORLD
 ```
 
 **Output:**
+
 ```text
-Text in Morse Code =  .... . .-.. .-.. ---   .-- --- .-. .-.. -..
+Text in Morse Code = .... . .-.. .-.. --- / .-- --- .-. .-.. -..
 ```
 
 ### Exiting the Application
@@ -89,7 +93,7 @@ Enter `/end` to terminate the application.
 
 ## How It Works
 
-The application uses a Python dictionary to map individual characters to their Morse code equivalents.
+The application uses a Python dictionary to map individual characters to their corresponding Morse code representations.
 
 The translation process follows these steps:
 
@@ -98,9 +102,8 @@ The translation process follows these steps:
 3. Iterates through each character.
 4. Looks up each character in the Morse code dictionary.
 5. Appends the corresponding Morse code representation to the output.
-6. Preserves word separation using additional spaces.
-
-Unsupported characters are skipped while maintaining spacing in the output.
+6. Uses forward slashes (`/`) to separate words.
+7. Skips unsupported characters while maintaining spacing in the output.
 
 ## Future Improvements
 
